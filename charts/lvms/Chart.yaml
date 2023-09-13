@@ -1,0 +1,6 @@
+apiVersion: v2
+description: Configure LVMS
+keywords:
+- pattern
+name: lvms
+version: 0.0.1
