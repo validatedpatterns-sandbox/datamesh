@@ -1,0 +1,4 @@
+clusterGroup:
+  subscriptions:
+    lvms:
+      channel: stable-4.13
