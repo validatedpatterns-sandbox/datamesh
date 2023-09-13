@@ -17,7 +17,7 @@ clusterGroup:
     lvms:
       name: lvms-operator
       namespace: openshift-storage
-      channel: stable-4.13
+      channel: stable-4.12
 
   projects:
     - hub
