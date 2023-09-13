@@ -1,0 +1,23 @@
+kind: Job
+metadata:
+  name: job-annotate-sc
+  namespace: openshift-storage
+spec:
+  template:
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+        command:
+        - /bin/bash
+        - -ce
+        - |
+          oc annotate sc/lvms-vgdatamesh storageclass.kubernetes.io/is-default-class=true
+          set +e
+          oc annotate sc/gp2 storageclass.kubernetes.io/is-default-class-
+          oc annotate sc/gp3-csi storageclass.kubernetes.io/is-default-class-
+        name: annotate-sc
+      dnsPolicy: ClusterFirst
+      restartPolicy: Never
+      serviceAccount: default
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 400
