@@ -1,2 +1,33 @@
 lvms:
   volumeGroup: vgdatamesh
+
+serviceAccountName: sc-annotater
+rbac:
+  roles:
+    - name: sc-mod
+      createRole: true
+      apiGroups:
+        - '""'
+      scope:
+        cluster: true
+      resources:
+        - storageclasses
+      verbs:
+        - "get"
+        - "list"
+        - "patch"
+        - "update"
+  roleBindings:
+    - name: annotate-sc
+      createBinding: true
+      scope:
+        cluster: true
+        namespace: ""
+      subjects:
+        kind: ServiceAccount
+        name: sc-annotater
+        namespace: openshift-storage
+        apiGroup: ""
+      roleRef:
+        kind: ClusterRole
+        name: sc-mod
