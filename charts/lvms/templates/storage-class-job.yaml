@@ -11,7 +11,7 @@ spec:
         - /bin/bash
         - -ce
         - |
-          oc annotate sc/lvms-vgdatamesh storageclass.kubernetes.io/is-default-class=true
+          oc annotate sc/lvms-{{ .Values.lvms.volumeGroup }} storageclass.kubernetes.io/is-default-class=true
           set +e
           oc annotate sc/gp2 storageclass.kubernetes.io/is-default-class-
           oc annotate sc/gp3-csi storageclass.kubernetes.io/is-default-class-
