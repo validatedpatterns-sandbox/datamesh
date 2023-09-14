@@ -4,3 +4,7 @@ keywords:
 - pattern
 name: lvms
 version: 0.0.1
+dependancies:
+- name: rbac
+  version: "0.0.*"
+  repository: "https://charts.validatedpatterns.io/"
