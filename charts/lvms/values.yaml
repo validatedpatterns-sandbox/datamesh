@@ -8,6 +8,8 @@ rbac:
     - createRole: true
       resources:
         - storageclasses
+      scope:
+        cluster: true
       verbs:
         - "get"
         - "list"
