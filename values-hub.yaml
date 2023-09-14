@@ -59,6 +59,7 @@ clusterGroup:
       project: hub
       repoURL: https://redhat-cop.github.io/helm-charts
       chart: ipa
+      targetRevision: 1.3.1
       overrides:
       - name: ocp_auth.bind_dn
         value: "uid=ldap_admin\\,cn=users\\,cn=accounts\\,dc=redhatlabs\\,dc=dev"
