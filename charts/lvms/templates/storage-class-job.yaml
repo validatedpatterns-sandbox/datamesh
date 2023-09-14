@@ -19,6 +19,6 @@ spec:
         name: annotate-sc
       dnsPolicy: ClusterFirst
       restartPolicy: Never
-      serviceAccount: lvms-sa
-      serviceAccountName: lvms-sa
+      serviceAccount: default
+      serviceAccountName: default
       terminationGracePeriodSeconds: 400
