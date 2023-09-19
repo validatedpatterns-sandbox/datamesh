@@ -60,17 +60,24 @@ clusterGroup:
       repoURL: https://redhat-cop.github.io/helm-charts
       chart: ipa
       targetRevision: 1.3.1
+      extraLocalClusterDomainFields:
+      - app_domain
       overrides:
       - name: ocp_auth.bind_dn
         value: "uid=ldap_admin\\,cn=users\\,cn=accounts\\,dc=redhatlabs\\,dc=dev"
-      - name: app_domain
-        value: "beekhof.aws.validatedpatterns.io"
       - name: ocp_auth.bind_password
         value: "supersecret"
       - name: ocp_auth.admin_password
         value: "alsosecret"
       - name: ocp_auth.enabled
         value: "true"
+
+    stackimg:
+      name: stack
+      project: hub
+      repoURL: https://github.com/day0hero/datamesh/
+      path: charts/all/stack
+      targetRevision: datamesh
 
 
 #    config-demo:
